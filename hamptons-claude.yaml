@@ -1,0 +1,296 @@
+# Hamptons Theme for Home Assistant
+# Place this file in: config/themes/hamptons.yaml
+# Then add to configuration.yaml:
+# frontend:
+# themes: !include_dir_merge_named themes
+
+hamptons-claude:
+  # fonts
+  ha-font-family: 'Montserrat,sans-serif'
+  font-family: 'Montserrat,sans-serif'
+  # primary-font-family: 'Montserrat,sans-serif'
+  ha-font-family-body: 'Montserrat,sans-serif'
+  ha-font-family-heading: 'Montserrat,sans-serif'
+  
+  ha-card-border-width: "0px"
+  swiper-pagination-color: "var(--color-4)"
+  card-mod-theme: "hamptons-claude"
+  border-radius: "20px"
+  ha-card-border-radius: "var(--border-radius)"
+
+  #Device types
+  lights: var(--hamptons-color-11)
+  appliances: var(--hamptons-color-10)
+  covers: var(--hamptons-color-8)
+  media: var(--hamptons-color-12)
+  climate: var(--hamptons-color-4)
+  sensors: var(--hamptons-color-1)
+  garden: var(--hamptons-color-2)
+  vacuums: var(--hamptons-color-13)
+  locks: var(--hamptons-color-9)
+  fans: var(--hamptons-color-6)
+  security: var(--hamptons-color-14)
+  doors: var(--hamptons-color-7)
+
+  card-mod-root: |
+    .header {
+      display: none;
+    }
+    #view {
+      padding: 0 !important;
+      height: 100dvh !important;
+      padding-top: env(safe-area-inset-top) !important;
+    }
+  card-mod-view-yaml: |
+    "*:first-child$": |
+      #columns .column > * {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+      }
+
+  # Mode detection
+  modes:
+    light:
+      # Base colors
+      primary-color: "#BCD2C5"                    # Sage Green
+      accent-color: "#C7CED9"                     # Periwinkle
+      dark-primary-color: "#BCD2C5"
+      light-primary-color: "#E0BBE4"              # Soft Lavender
+      
+      # Text colors
+      primary-text-color: "#2c2c2e"               # Dark text
+      text-primary-color: "#FAFAFA"              # White text on colored backgrounds
+      secondary-text-color: "#767D84"             # Dark Grey
+      disabled-text-color: "#B4B9BE"              # Light Grey
+      label-badge-border-color: "#E2CABD"         # Peachy Beige
+      
+      # Sidebar colors
+      sidebar-icon-color: "#767D84"               # Dark Grey
+      sidebar-text-color: "#2c2c2e"               
+      sidebar-selected-icon-color: "#BCD2C5"      # Sage Green
+      sidebar-selected-text-color: "#2c2c2e"
+      sidebar-background-color: "#FAFAFA"
+      
+      # Background colors
+      background: url('/local/backgrounds/pxfuel.jpg')
+      primary-background-color: "#FFFFFF"
+#      primary-background-color: "#f5f5f7"         # Light background
+      secondary-background-color: "#FAFAFA"      # Card background
+      divider-color: "rgba(0, 0, 0, .12)"
+      table-row-background-color: "#f5f5f7"
+      table-row-alternative-background-color: "#FAFAFA"
+      
+      # Header colors
+      app-header-background-color: "rgb(241,232,237)"
+      app-header-text-color: "#2c2c2e"
+      app-header-selection-bar-color: "#BCD2C5"   # Sage Green
+      
+      # Card colors
+      popup-background: "#FAFAFA"
+      card-background-color: "#FAFAFA"
+      ha-card-border-radius: "20px"
+#      ha-card-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2)
+      ha-card-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10), 0 3px 8px rgba(0, 0, 0, 0.06)
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10), 0 3px 8px rgba(0, 0, 0, 0.06)
+      border: 1px solid rgba(0, 0, 0, 0.08)
+      paper-card-background-color: "#FAFAFA"
+      paper-dialog-background-color: "#FAFAFA"
+      paper-item-icon-color: "#767D84"            # Dark Grey
+      paper-item-icon-active-color: "#BCD2C5"     # Sage Green
+      paper-listbox-background-color: "#FAFAFA"
+      
+      # Toggle/Switch colors
+      paper-toggle-button-checked-button-color: "#BCD2C5"  # Sage Green
+      paper-toggle-button-checked-bar-color: "#BCD2C5"
+      paper-toggle-button-unchecked-button-color: "#B4B9BE" # Light Grey
+      paper-toggle-button-unchecked-bar-color: "#B4B9BE"
+      
+      # Slider colors
+      paper-slider-knob-color: "#BCD2C5"          # Sage Green
+      paper-slider-knob-start-color: "#BCD2C5"
+      paper-slider-pin-color: "#BCD2C5"
+      paper-slider-active-color: "#BCD2C5"
+      paper-slider-container-color: "rgba(188, 210, 197, 0.2)"
+      paper-slider-secondary-color: "#E2CABD"     # Peachy Beige
+      
+      # Input colors
+      input-fill-color: "rgba(0, 0, 0, 0.05)"
+      input-ink-color: "#2c2c2e"
+      input-label-ink-color: "#767D84"            # Dark Grey
+      input-disabled-fill-color: "rgba(0, 0, 0, 0.02)"
+      input-disabled-ink-color: "#B4B9BE"         # Light Grey
+      input-dropdown-icon-color: "#767D84"
+      
+      # State colors
+      state-icon-color: "#767D84"                 # Dark Grey
+      state-icon-active-color: "#BCD2C5"          # Sage Green
+      state-icon-unavailable-color: "#B4B9BE"     # Light Grey
+      
+      # Lovelace specific
+#      lovelace-background: "#f5f5f7"
+      
+      # Badges
+      label-badge-red: "#E5BEBC"
+      label-badge-blue: "#C6DBEF"
+      label-badge-green: "#BCD2C5"
+      label-badge-yellow: "#F2DFBF"
+      label-badge-grey: "#B4B9BE"
+      
+      # Energy colors
+      energy-grid-consumption-color: "#C7CED9"
+      energy-grid-return-color: "#BCD2C5"
+      energy-solar-color: "#F2DFBF"
+      energy-non-fossil-color: "#BCD2C5"
+      energy-battery-in-color: "#C6DBEF"
+      energy-battery-out-color: "#E0BBE4"
+      energy-gas-color: "#E2CABD"
+      energy-water-color: "#91A8C3"
+      
+      # Alert/Status colors
+      alert-success-color: "#BCD2C5"              # Sage Green
+      alert-info-color: "#F2DFBF"                 # Butter Yellow
+      alert-warning-color: "#E2CABD"              # Peachy Beige
+      alert-error-color: "#E5BEBC"                # Rose Blush
+      
+      # Custom Hamptons colors - Light Mode
+      hamptons-color-1: "#D3BDB6"                 # Soft Taupe
+      hamptons-color-2: "#BCD2C5"                 # Sage Green
+      hamptons-color-3: "#E2CABD"                 # Peachy Beige
+      hamptons-color-4: "#C7CED9"                 # Periwinkle
+      hamptons-color-5: "#E0BBE4"                 # Soft Lavender
+      hamptons-color-6: "#C6DBEF"                 # Sky Blue
+      hamptons-color-7: "#EAD1C3"                 # Champagne
+      hamptons-color-8: "#CFC3DA"                 # Wisteria
+      hamptons-color-9: "#DBD6C5"                 # Sand Dollar
+      hamptons-color-10: "#C3DCDB"                # Seafoam
+      hamptons-color-11: "#F2DFBF"                # Butter Yellow
+      hamptons-color-12: "#F5B5C0"                # Soft Pink
+      hamptons-color-13: "#91A8C3"                # Deep Ocean
+      hamptons-color-14: "#E5BEBC"                # Rose Blush
+      hamptons-color-15: "#B4B9BE"                # Light Grey
+      hamptons-color-16: "#767D84"                # Dark Grey
+
+    dark:
+      # Base colors
+      primary-color: "#7FA893"                    # Forest Sage
+      accent-color: "#8E95AB"                     # Dusty Periwinkle
+      dark-primary-color: "#7FA893"
+      light-primary-color: "#B494BA"              # Dusk Lavender
+      
+      # Text colors
+      primary-text-color: "#e8e8e8"               # Light text
+      text-primary-color: "#FAFAFA"               # White text
+      secondary-text-color: "#A3A9B2"             # Light Grey
+      disabled-text-color: "#5A6169"              # Dark Grey
+      label-badge-border-color: "#C19A87"         # Terracotta
+      
+      # Sidebar colors
+      sidebar-icon-color: "#A3A9B2"               # Light Grey
+      sidebar-text-color: "#e8e8e8"               
+      sidebar-selected-icon-color: "#7FA893"      # Forest Sage
+      sidebar-selected-text-color: "#FAFAFA"
+      sidebar-background-color: "#1a1d23"
+      
+      # Background colors
+      primary-background-color: "#0f1216"         # Dark background
+      secondary-background-color: "#1a1d23"       # Card background
+      divider-color: "rgba(255, 255, 255, .12)"
+      table-row-background-color: "#1a1d23"
+      table-row-alternative-background-color: "#252930"
+    
+      ha-card-border-radius: "20px"
+      ha-card-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20)
+      border: 1px solid rgba(255, 255, 255, 0.12)
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20)
+      
+      # Header colors
+      app-header-background-color: "rgb(80,73,80)"
+      app-header-text-color: "#e8e8e8"
+      app-header-selection-bar-color: "#7FA893"   # Forest Sage
+      
+      # Card colors
+      popup-background: "#2d3139"
+      card-background-color: "#1a1d23"
+      paper-card-background-color: "#1a1d23"
+      paper-dialog-background-color: "#1a1d23"
+      paper-item-icon-color: "#A3A9B2"            # Light Grey
+      paper-item-icon-active-color: "#7FA893"     # Forest Sage
+      paper-listbox-background-color: "#1a1d23"
+      
+      # Toggle/Switch colors
+      paper-toggle-button-checked-button-color: "#7FA893"  # Forest Sage
+      paper-toggle-button-checked-bar-color: "#7FA893"
+      paper-toggle-button-unchecked-button-color: "#5A6169" # Dark Grey
+      paper-toggle-button-unchecked-bar-color: "#5A6169"
+      
+      # Slider colors
+      paper-slider-knob-color: "#7FA893"          # Forest Sage
+      paper-slider-knob-start-color: "#7FA893"
+      paper-slider-pin-color: "#7FA893"
+      paper-slider-active-color: "#7FA893"
+      paper-slider-container-color: "rgba(127, 168, 147, 0.2)"
+      paper-slider-secondary-color: "#C19A87"     # Terracotta
+      
+      # Input colors
+      input-fill-color: "rgba(255, 255, 255, 0.05)"
+      input-ink-color: "#e8e8e8"
+      input-label-ink-color: "#A3A9B2"            # Light Grey
+      input-disabled-fill-color: "rgba(255, 255, 255, 0.02)"
+      input-disabled-ink-color: "#5A6169"         # Dark Grey
+      input-dropdown-icon-color: "#A3A9B2"
+      
+      # State colors
+      state-icon-color: "#A3A9B2"                 # Light Grey
+      state-icon-active-color: "#7FA893"          # Forest Sage
+      state-icon-unavailable-color: "#5A6169"     # Dark Grey
+      
+      # Lovelace specific
+      lovelace-background: "#0f1216"
+      
+      # Badges
+      label-badge-red: "#B85C5C"
+      label-badge-blue: "#6B8CA8"
+      label-badge-green: "#7FA893"
+      label-badge-yellow: "#D4A574"
+      label-badge-grey: "#5A6169"
+      
+      # Energy colors
+      energy-grid-consumption-color: "#8E95AB"
+      energy-grid-return-color: "#7FA893"
+      energy-solar-color: "#D4A574"
+      energy-non-fossil-color: "#7FA893"
+      energy-battery-in-color: "#6B8CA8"
+      energy-battery-out-color: "#B494BA"
+      energy-gas-color: "#C19A87"
+      energy-water-color: "#6D9C9A"
+      
+      # Code editor (for dark mode)
+      code-editor-background-color: "#1a1d23"
+      
+      # Markdown
+      markdown-code-background-color: "#252930"
+      
+      # Alert/Status colors
+      alert-success-color: "#7FA893"              # Forest Sage
+      alert-info-color: "#D4A574"                 # Golden Wheat
+      alert-warning-color: "#C19A87"              # Terracotta
+      alert-error-color: "#B85C5C"                # Brick Red
+      
+      # Custom Hamptons colors - Dark Mode (SAME NAMES as light mode)
+      hamptons-color-1: "#A89B94"                 # Warm Greige (matches Taupe)
+      hamptons-color-2: "#7FA893"                 # Forest Sage (matches Sage)
+      hamptons-color-3: "#C19A87"                 # Terracotta (matches Peachy Beige)
+      hamptons-color-4: "#8E95AB"                 # Dusty Periwinkle (matches Periwinkle)
+      hamptons-color-5: "#B494BA"                 # Dusk Lavender (matches Lavender)
+      hamptons-color-6: "#6B8CA8"                 # Steel Blue (matches Sky Blue)
+      hamptons-color-7: "#C5A880"                 # Warm Sand (matches Champagne)
+      hamptons-color-8: "#9C8299"                 # Mauve (matches Wisteria)
+      hamptons-color-9: "#B8A992"                 # Driftwood (matches Sand Dollar)
+      hamptons-color-10: "#6D9C9A"                # Teal (matches Seafoam)
+      hamptons-color-11: "#D4A574"                # Golden Wheat (matches Butter Yellow)
+      hamptons-color-12: "#C47B7B"                # Dusty Rose (matches Rose Blush)
+      hamptons-color-13: "#6B8CA8"                # Steel Blue (matches Deep Ocean)
+      hamptons-color-14: "#B85C5C"                # Brick Red (matches Rose Blush)
+      hamptons-color-15: "#A3A9B2"                # Light Grey
+      hamptons-color-16: "#5A6169"                # Dark Grey
